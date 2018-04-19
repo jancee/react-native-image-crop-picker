@@ -82,6 +82,9 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
     private String cropperStatusBarColor = DEFAULT_TINT;
     private String cropperToolbarColor = DEFAULT_TINT;
     private String cropperToolbarTitle = null;
+    private String moveAndScale = "Move and Scale";
+    private String cancel = "取消";
+    private String choose = "选定";
 
     //Light Blue 500
     private final String DEFAULT_WIDGET_COLOR = "#03A9F4";
@@ -588,6 +591,7 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
         if (cropperToolbarTitle != null) {
             options.setToolbarTitle(cropperToolbarTitle);
         }
+        options.setToolbarTitle("移动和缩放");
         if (enableRotationGesture) {
             // UCropActivity.ALL = enable both rotation & scaling
             options.setAllowedGestures(

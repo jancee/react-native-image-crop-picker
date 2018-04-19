@@ -84,7 +84,7 @@ RCT_EXPORT_MODULE();
                                 @"useFrontCamera": @NO,
                                 @"compressImageQuality": @1,
                                 @"compressVideoPreset": @"MediumQuality",
-                                @"loadingLabelText": @"Processing assets...",
+                                @"loadingLabelText": @"处理资源...",
                                 @"mediaType": @"any",
                                 @"showsSelectedCount": @YES
                                 };
@@ -356,6 +356,9 @@ RCT_EXPORT_METHOD(openCropper:(NSDictionary *)options
     imageCropVC.avoidEmptySpaceAroundImage = YES;
     imageCropVC.dataSource = self;
     imageCropVC.delegate = self;
+    imageCropVC.moveAndScaleLabel.text = @"移动缩放";
+    [imageCropVC.cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+    [imageCropVC.chooseButton setTitle:@"选定" forState:UIControlStateNormal];
     [imageCropVC setModalPresentationStyle:UIModalPresentationCustom];
     [imageCropVC setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
     dispatch_async(dispatch_get_main_queue(), ^{
